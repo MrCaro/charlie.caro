@@ -8,10 +8,10 @@ import '@/styles/tailwind.css'
 export const metadata: Metadata = {
   title: {
     template: '%s - Charlie Caro',
-    default:
-      'Charlie Caro - Software designer, soccer player and theme park aficionado',
+    default: 'Charlie Caro -  Front-End Software Engineer',
   },
-  description: ' I’m Charlie, a software engineer based in Orlando, FL.',
+  description:
+    'Passionate about crafting clean, fast, and user-friendly web experiences',
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
