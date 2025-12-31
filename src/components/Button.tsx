@@ -12,7 +12,9 @@ type ButtonProps = {
   variant?: keyof typeof variantStyles
 } & (
   | (React.ComponentPropsWithoutRef<'button'> & { href?: undefined })
-  | React.ComponentPropsWithoutRef<typeof Link>
+  | (Omit<React.ComponentPropsWithoutRef<typeof Link>, 'href'> & {
+      href: string | URL
+    })
 )
 
 export function Button({

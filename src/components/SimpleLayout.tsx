@@ -5,7 +5,7 @@ export function SimpleLayout({
   intro,
   children,
 }: {
-  title: string
+  title: string | React.ReactNode
   intro: string
   children?: React.ReactNode
 }) {

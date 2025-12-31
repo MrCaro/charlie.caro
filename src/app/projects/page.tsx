@@ -3,47 +3,56 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
 import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+
+import logoPrimalKitchen from '@/images/logos/primal-kitchen.svg'
+import logoPlugTech from '@/images/logos/plug-tech.svg'
+import logoMiarepa from '@/images/logos/miarepa.svg'
+import logoCanovation from '@/images/logos/canovation.svg'
+import logoBoise from '@/images/logos/boise.svg'
 
 const projects = [
   {
-    name: 'Planetaria',
-    description:
-      'Creating technology to empower civilians to explore space on their own terms.',
-    link: { href: 'http://planetaria.tech', label: 'planetaria.tech' },
-    logo: logoPlanetaria,
+    name: 'Primal Kitchen',
+    description: 'Primal Kitchen sees 40% revenue lift with site redesign.',
+    link: {
+      href: 'https://www.primalkitchen.com/',
+      label: 'primalkitchen.com',
+    },
+    logo: logoPrimalKitchen,
   },
   {
-    name: 'Animaginary',
-    description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
+    name: 'Plug Tech',
+    description: 'Plug Tech sees 27% revenue lift with site redesign.',
+    link: { href: 'https://www.plug.tech/', label: 'plug.tech' },
+    logo: logoPlugTech,
   },
   {
-    name: 'HelioStream',
+    name: 'Design System',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoHelioStream,
+      'Design System for E-commerce and Marketing Websites built with React and Tailwind CSS.',
+    link: {
+      href: 'https://component-library-khaki.vercel.app/?path=/docs/primitives-button--docs',
+      label: 'miarepa.design',
+    },
+    logo: logoMiarepa,
   },
   {
-    name: 'cosmOS',
+    name: 'Canovation AR',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
+      'An interactive AR experience for Canovation that brings their innovative can design to life.',
     link: { href: '#', label: 'github.com' },
-    logo: logoCosmos,
+    logo: logoCanovation,
   },
   {
-    name: 'OpenShuttle',
+    name: 'Campaing for Boise State University',
     description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+      'High-performing site that makes content updates easy for a non-technical team.',
+    link: {
+      href: 'https://live-campaign-boise-state-university.pantheonsite.io/',
+      label: 'campaign-boise-state-university.com',
+    },
+    logo: logoBoise,
   },
 ]
 
@@ -60,14 +69,25 @@ function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export const metadata: Metadata = {
   title: 'Projects',
-  description: 'Things I’ve made trying to put my dent in the universe.',
+  description: 'Things I’ve built that actually shipped and moved the needle.',
 }
 
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Things I’ve made trying to put my dent in the universe."
-      intro="I’ve worked on tons of little projects over the years but these are the ones that I’m most proud of. Many of them are open-source, so if you see something that piques your interest, check out the code and contribute if you have ideas for how it can be improved."
+      title={
+        <>
+          <span className="relative z-1">
+            Things I’ve built that actually shipped and{' '}
+          </span>
+          <span className="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-2 before:bg-emerald-500 dark:before:bg-emerald-400">
+            <span className="relative text-white dark:text-gray-950">
+              moved the needle.
+            </span>
+          </span>
+        </>
+      }
+      intro="These are projects I’ve worked on that shipped to real users and delivered measurable results. They reflect how I collaborate with teams, balance design and engineering, and focus on building things that matter."
     >
       <ul
         role="list"
@@ -84,7 +104,9 @@ export default function Projects() {
               />
             </div>
             <h2 className="mt-6 text-base font-semibold text-zinc-800 dark:text-zinc-100">
-              <Card.Link href={project.link.href}>{project.name}</Card.Link>
+              <Card.Link href={project.link.href} target="_blank">
+                {project.name}
+              </Card.Link>
             </h2>
             <Card.Description>{project.description}</Card.Description>
             <p className="relative z-10 mt-6 flex text-sm font-medium text-zinc-400 transition group-hover:text-teal-500 dark:text-zinc-200">

@@ -11,15 +11,15 @@ import {
   LinkedInIcon,
   XIcon,
 } from '@/components/SocialIcons'
-import logoAirbnb from '@/images/logos/airbnb.svg'
-import logoFacebook from '@/images/logos/facebook.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
-import logoStarbucks from '@/images/logos/starbucks.svg'
-import image1 from '@/images/photos/image-1.jpg'
-import image2 from '@/images/photos/image-2.jpg'
-import image3 from '@/images/photos/image-3.jpg'
-import image4 from '@/images/photos/image-4.jpg'
-import image5 from '@/images/photos/image-5.jpg'
+import logoPrismfly from '@/images/logos/prismfly.svg'
+import logoWonderful from '@/images/logos/wonderfulio.svg'
+import logoTasty from '@/images/logos/tasty.svg'
+import logo321 from '@/images/logos/321.svg'
+import image1 from '@/images/photos/charlie-nyc.jpg'
+import image2 from '@/images/photos/charlie-soccer.jpg'
+import image3 from '@/images/photos/charlie-rachel.jpg'
+import image4 from '@/images/photos/teri.jpg'
+import image5 from '@/images/photos/charlie-hike.jpg'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 
@@ -189,35 +189,35 @@ function Role({ role }: { role: Role }) {
 function Resume() {
   let resume: Array<Role> = [
     {
-      company: 'Planetaria',
-      title: 'CEO',
-      logo: logoPlanetaria,
-      start: '2019',
+      company: 'Prismfly',
+      title: 'Lead Shopify Engineer',
+      logo: logoPrismfly,
+      start: 'Jan 2024',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
     },
     {
-      company: 'Airbnb',
-      title: 'Product Designer',
-      logo: logoAirbnb,
-      start: '2014',
-      end: '2019',
+      company: 'Wonderful.io',
+      title: 'Shopify Engineer',
+      logo: logoWonderful,
+      start: 'Jan 2023',
+      end: 'Nov 2023',
     },
     {
-      company: 'Facebook',
-      title: 'iOS Software Engineer',
-      logo: logoFacebook,
-      start: '2011',
-      end: '2014',
+      company: 'Tasty Studio',
+      title: 'Web Engineer',
+      logo: logoTasty,
+      start: 'Apr 2021',
+      end: 'Dec 2022',
     },
     {
-      company: 'Starbucks',
-      title: 'Shift Supervisor',
-      logo: logoStarbucks,
-      start: '2008',
-      end: '2011',
+      company: '321 The Agency',
+      title: 'Front-End Engineer',
+      logo: logo321,
+      start: 'Feb 2019',
+      end: 'Mar 2021',
     },
   ]
 
@@ -232,7 +232,12 @@ function Resume() {
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
+      <Button
+        href="/documents/CharlieCaroCV.pdf"
+        variant="secondary"
+        className="group mt-6 w-full"
+        download
+      >
         Download CV
         <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
       </Button>
@@ -277,8 +282,14 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Front-End Software Engineer, soccer player and theme park
-            aficionado.
+            <span className="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-2 before:bg-emerald-500 dark:before:bg-emerald-400">
+              <span className="relative text-white dark:text-gray-950">
+                Front-End Software Engineer
+              </span>
+            </span>
+            <span className="relative z-1">
+              , Soccer Player and Theme Park Aficionado.
+            </span>
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             Passionate about crafting clean, fast, and user-friendly web
@@ -316,7 +327,7 @@ export default async function Home() {
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            <Newsletter />
+            {/* <Newsletter /> */}
             <Resume />
           </div>
         </div>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="322" height="322" viewBox="0 0 322 322">
+  <defs>
+    <clipPath id="clip-canovation">
+      <rect width="322" height="322"/>
+    </clipPath>
+  </defs>
+  <g id="canovation" clip-path="url(#clip-canovation)">
+    <path id="Path_6808" data-name="Path 6808" d="M0,206Z" transform="translate(44 44)" fill="#7aa4ff"/>
+    <g id="Group_806" data-name="Group 806" transform="translate(-89 -89)">
+      <rect id="Rectangle_246" data-name="Rectangle 246" width="322" height="322" rx="161" transform="translate(89 89)" fill="#011e36"/>
+    </g>
+    <g id="Group_808" data-name="Group 808" transform="translate(-61.001 -64)">
+      <g id="Group_802" data-name="Group 802" transform="translate(132.001 145)">
+        <path id="Subtraction_5" data-name="Subtraction 5" d="M165,161H75a74.651,74.651,0,0,1-41.87-12.765,75.218,75.218,0,0,1-27.176-32.9A74.516,74.516,0,0,1,0,86.223H38.9V81.534a37.469,37.469,0,0,0,37.5,37.5H180V146a15,15,0,0,1-15,15ZM38.9,80.193h0l0-3.889H0V75A74.65,74.65,0,0,1,12.81,33.067a75.219,75.219,0,0,1,33-27.173A74.53,74.53,0,0,1,75,0h90a15,15,0,0,1,15,15V42.73H76.4A37.469,37.469,0,0,0,38.9,80.193Z" transform="translate(-0.001)" fill="#31a8ff"/>
+      </g>
+      <rect id="Rectangle_245" data-name="Rectangle 245" width="34" height="34" rx="17" transform="translate(196 208)" fill="#60d965"/>
+    </g>
+  </g>
+</svg>
