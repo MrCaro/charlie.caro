@@ -1,6 +1,8 @@
 import logoPrimalKitchen from '@/images/logos/primal-kitchen-logo.svg'
+import logoPrimalKitchenLight from '@/images/logos/primal-kitchen-logo-white.svg'
 import logoWU from '@/images/logos/wild-unlimited-logo.svg'
 import logoAelia from '@/images/logos/aelia-logo.svg'
+import logoAeliaWhite from '@/images/logos/aelia-logo-white.svg'
 
 import avatarPrimalKitchen from '@/images/photos/anna-simon.jpg'
 import avatarWU from '@/images/photos/scott-lyman.png'
@@ -9,8 +11,7 @@ import avatarAelia from '@/images/photos/kayla-graham.png'
 const data = [
   {
     logo: logoPrimalKitchen.src,
-    logoLight:
-      'https://tailwindcss.com/plus-assets/img/logos/tuple-logo-white.svg',
+    logoLight: logoPrimalKitchenLight.src,
     quote: `I've done so many different website launches and worked with so many different developers, and I have never in my entire career worked with a developer like Charlie who is so quick and so easy to work with, who will just answer immediately.`,
     avatar: avatarPrimalKitchen.src,
     name: 'Anna Simon',
@@ -26,8 +27,7 @@ const data = [
   },
   {
     logo: logoAelia.src,
-    logoLight:
-      'https://tailwindcss.com/plus-assets/img/logos/reform-logo-white.svg',
+    logoLight: logoAeliaWhite.src,
     quote: `Working with Charlie was an absolute dream. We approached him with a work-in-progress website and a clear list of needs, and he not only delivered on every one of them but consistently went beyond what we imagined. Charlie helped shape and elevate the brand vision, bringing clarity, polish, and cohesion to the final result. Looking back, the only regret is not bringing him on earlier.`,
     avatar: avatarAelia.src,
     name: 'Kayla Graham',
