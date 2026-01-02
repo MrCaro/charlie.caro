@@ -1,0 +1,61 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+import notionCoverImage from './pk-notion.png'
+
+export const article = {
+  author: 'Charlie Caro',
+  date: '2025-05-17',
+  title: 'Primal Kitchen Timeline Challenge',
+  description:
+    'When you’re building a website for a company as ambitious as Planetaria, you need to make an impression. I wanted people to visit our website and see animations that looked more realistic than reality itself.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Delivering the Primal Kitchen website within a 10 week timeline required deliberate scope control and systems level decision making.
+
+## Delivery Strategy & Technical Leadership
+
+Early in the project, I audited the platform through an ecommerce approach, identifying which pages and sections were revenue critical vs supportive but non blocking.
+
+Because this was a commerce driven build, I prioritized the components and templates that directly impacted conversion and purchasing flow:
+
+- Product detail pages
+- Collection pages
+- Home and About templates
+- Cart page and cart drawer experience
+
+These surfaces formed the backbone of the buying journey and represented the highest risk if delayed or compromised.
+
+To protect delivery quality and timeline, I intentionally pushed non critical but content heavy areas such as the blog, recipes, points, and loyalty experiences into Phase 2. This allowed the team to focus engineering effort on stabilizing core commerce flows, performance, and design system foundations without fragmenting velocity.
+
+## Phased Execution & Impact
+
+By constraining Phase 1 to the highest leverage pages and components, I was able to:
+
+- Maintain a clean, scalable architecture rather than shipping shortcuts
+- Reduce cross team dependency churn during development
+- Ensure core templates were production ready, accessible, and extensible
+
+The result was a successful ontime launch at the 10 week mark, with a stable foundation already in place for continued expansion. Two months later, Phase 2 was delivered efficiently, reusing the same design system, section architecture, and component abstractions established in Phase 1 without requiring structural refactors.
+
+This phased approach allowed the business to realize value earlier, derisk the launch, and continue shipping without sacrificing code quality or long term maintainability.
+
+## Takeaways
+
+This outcome was driven less by speed alone and more by intentional technical leadership identifying where engineering effort would generate the most impact, protecting the critical path, and sequencing delivery in a way that aligned both business priorities and system scalability.
+
+By making these decisions early, the project avoided common e-commerce pitfalls: rushed templates, brittle code, and post-launch rewrites—ultimately delivering a platform that performed from day one and scaled cleanly beyond launch.
+
+## Management
+
+I decomposed Phase 1 into clearly defined subphases to surface dependencies, manage risk, and track progress against the critical path. These subphases were mapped into Asana as a structured delivery board, providing a real time view of timeline, ownership, and blockers.
+
+This approach gave stakeholders clear visibility into progress and tradeoffs, while allowing the engineering team to sequence work efficiently and adapt without disrupting the overall delivery schedule.
+
+<Image src={notionCoverImage} alt="" />
