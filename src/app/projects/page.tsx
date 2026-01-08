@@ -44,7 +44,7 @@ const projects = [
     logo: logoCanovation,
   },
   {
-    name: 'Campaing for Boise State University',
+    name: 'Campaign for Boise State University',
     description:
       'High-performing site that makes content updates easy for a non-technical team.',
     link: {
