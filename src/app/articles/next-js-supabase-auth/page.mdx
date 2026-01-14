@@ -1,0 +1,146 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+export const article = {
+  author: 'Charlie Caro',
+  date: '2025-12-11',
+  title: 'Next.JS + Supabase Auth',
+  description:
+    'Implementing authentication in a Next.JS application using Supabase Auth with utility functions for route protection and user role management.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+While working on an app that required auth gated routes I decided to go with Supabase Auth since I was already using Supabase as my database.
+
+I followed the official Next.JS + Supabase Auth example as a starting point, but I wanted to improve the developer experience of protecting routes and redirecting users based on their auth status.
+
+To do this I created three utility functions: `redirectAuth`, `isAuth`, and `isAdmin`.
+
+`redirectAuth` function checks if a user is authenticated and redirects them to a specified route if they are. This is useful for pages like login or signup where authenticated users shouldn't have access.
+
+```jsx
+//util/auth-redirect.js
+import { redirect } from 'next/navigation'
+import { createClient } from '@/lib/supabase/server'
+
+export async function redirectAuth(redirectTo = '/account') {
+  const supabase = await createClient()
+  const { data } = await supabase.auth.getClaims()
+
+  if (data?.claims) {
+    redirect(redirectTo)
+  }
+}
+```
+
+`isAuth` function checks if a user is authenticated and redirects them to a specified route if they are not. This is useful for protecting routes that require authentication.
+
+```js
+//util/isAuth.js
+import { redirect } from 'next/navigation'
+import { createClient } from '@/lib/supabase/server'
+
+export async function isAuth({ endpoint = '/login' } = {}) {
+  const supabase = await createClient()
+  const { data, error } = await supabase.auth.getClaims()
+
+  if (error || !data?.claims) {
+    redirect(endpoint)
+  }
+
+  return supabase
+}
+```
+
+`isAdmin` function checks if a user is authenticated and has an admin role. If not, it redirects them to an unauthorized page. This is useful for protecting admin routes. The `isAdmin` function builds on top of `isAuth` to first ensure the user is authenticated before checking their role.
+
+```js
+//util/isAdmin.js
+import { redirect } from 'next/navigation'
+import { isAuth } from './isAuth'
+
+export async function isAdmin() {
+  const supabase = await isAuth()
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+
+  const { data: profile } = await supabase
+    .from('profiles')
+    .select('role')
+    .eq('id', user.id)
+    .single()
+
+  if (profile?.role !== 'admin') redirect('/unauthorized')
+
+  return supabase
+}
+```
+
+Example of the util function in use within the account page route, see `await isAuth()`
+
+```jsx
+import { isAuth } from '../util/isAuth'
+import AccountForm from './account-form'
+import { createClient } from '@/lib/supabase/server'
+import Header from '@/app/components/app/Header'
+import Footer from '@/app/components/app/Footer'
+import AccountDashboard from './account-dashboard'
+
+export default async function Account() {
+  const supabase = await createClient()
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+
+  await isAuth()
+
+  return (
+    <div className="dark:bg-stone-900">
+      <Header user={user} />
+      <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <AccountDashboard user={user} />
+        <AccountForm user={user} />
+      </main>
+      <Footer />
+    </div>
+  )
+}
+```
+
+Example of the util function in use within the admin page route, see `await isAdmin()`
+
+```jsx
+import Link from 'next/link'
+import { isAdmin } from '../util/isAdmin'
+
+export default async function AdminLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  await isAdmin()
+  return (
+    <div className="h-dvh">
+      <header className="flex flex-wrap items-center justify-between border-b border-b-zinc-200 p-4">
+        <p>Admin Portal</p>
+        <nav className="flex gap-4">
+          <Link href="/">Home</Link>
+          <Link href="/admin/trips">Trips</Link>
+          <Link href="/admin/trips/new">New Trip</Link>
+        </nav>
+      </header>
+      <main>{children}</main>
+    </div>
+  )
+}
+```
+
+Having these utility functions makes it easy to protect routes and manage user access based on authentication and roles throughout the Next.JS application by simply importing and invoking the relevant function at the start of each route component.
