@@ -1,8 +1,9 @@
 'use client'
 
+import { Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 
-export default function ViewerPage() {
+function ViewerContent() {
   const searchParams = useSearchParams()
   const src = searchParams.get('src')
 
@@ -18,5 +19,19 @@ export default function ViewerPage() {
     <main className="min-h-screen bg-neutral-950">
       <img src={src} alt="Design preview" className="block h-auto w-full" />
     </main>
+  )
+}
+
+export default function ViewerPage() {
+  return (
+    <Suspense
+      fallback={
+        <main className="flex min-h-screen items-center justify-center">
+          <p>Loading viewer...</p>
+        </main>
+      }
+    >
+      <ViewerContent />
+    </Suspense>
   )
 }
