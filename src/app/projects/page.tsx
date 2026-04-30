@@ -40,7 +40,7 @@ const projects = [
     logo: logoExirBio,
   },
   {
-    name: 'Campaign for Boise State University',
+    name: 'Boise State University',
     description:
       'I was the Lead WordPress Developer for Boise State microsite that makes content updates easy for a non-technical team.',
     link: {
