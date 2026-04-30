@@ -9,11 +9,13 @@ import logoPlugTech from '@/images/logos/plug-tech.svg'
 import logoMiarepa from '@/images/logos/miarepa.svg'
 import logoCanovation from '@/images/logos/canovation.svg'
 import logoBoise from '@/images/logos/boise.svg'
+import logoExirBio from '@/images/logos/exirbio.png'
 
 const projects = [
   {
     name: 'Primal Kitchen',
-    description: 'Primal Kitchen sees 40% revenue lift with site redesign.',
+    description:
+      'I was the Lead Shopify Developer for Primal Kitchen that saw 40% revenue lift with site redesign.',
     link: {
       href: 'https://www.primalkitchen.com/',
       label: 'primalkitchen.com',
@@ -22,9 +24,37 @@ const projects = [
   },
   {
     name: 'Plug Tech',
-    description: 'Plug Tech sees 27% revenue lift with site redesign.',
+    description:
+      'I was the Lead Shopify Developer for Plug Tech that saw 27% revenue lift with site redesign.',
     link: { href: 'https://www.plug.tech/', label: 'plug.tech' },
     logo: logoPlugTech,
+  },
+  {
+    name: 'Exir Bio',
+    description:
+      'I was the Lead Designer for Exir Bio new website project to better communicate the companys mission and offerings.',
+    link: {
+      href: '/articles/exir-bio-website-redesign-outcome',
+      label: 'exirbio.com',
+    },
+    logo: logoExirBio,
+  },
+  {
+    name: 'Campaign for Boise State University',
+    description:
+      'I was the Lead WordPress Developer for Boise State microsite that makes content updates easy for a non-technical team.',
+    link: {
+      href: 'https://live-campaign-boise-state-university.pantheonsite.io/',
+      label: 'campaign-boise-state-university.com',
+    },
+    logo: logoBoise,
+  },
+  {
+    name: 'Canovation AR',
+    description:
+      'I was the Lead Developer for an interactive AR experience for Canovation that brings their innovative can design to life.',
+    link: { href: '#', label: 'github.com' },
+    logo: logoCanovation,
   },
   {
     name: 'Design System',
@@ -35,23 +65,6 @@ const projects = [
       label: 'miarepa.design',
     },
     logo: logoMiarepa,
-  },
-  {
-    name: 'Canovation AR',
-    description:
-      'An interactive AR experience for Canovation that brings their innovative can design to life.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoCanovation,
-  },
-  {
-    name: 'Campaign for Boise State University',
-    description:
-      'High-performing site that makes content updates easy for a non-technical team.',
-    link: {
-      href: 'https://live-campaign-boise-state-university.pantheonsite.io/',
-      label: 'campaign-boise-state-university.com',
-    },
-    logo: logoBoise,
   },
 ]
 
