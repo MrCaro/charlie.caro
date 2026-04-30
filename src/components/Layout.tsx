@@ -1,7 +1,17 @@
+'use client'
+
 import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
+import { usePathname } from 'next/navigation'
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname()
+  const isViewerRoute = pathname?.startsWith('/viewer')
+
+  if (isViewerRoute) {
+    return <>{children}</>
+  }
+
   return (
     <>
       <div className="fixed inset-0 flex justify-center sm:px-8">

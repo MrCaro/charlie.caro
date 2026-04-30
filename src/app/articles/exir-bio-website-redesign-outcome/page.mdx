@@ -1,0 +1,112 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+import coverImage from './exir-bio-banner.png'
+import homePageImage from './exir-bio-homepage.png'
+import aboutPageImage from './exir-bio-aboutpage.png'
+import productPageCollectionImage from './exir-bio-productpage-collection.png'
+import productPageSingleImage from './exir-bio-productpage-single.png'
+import applicationPageCollectionImage from './exir-bio-applicationpage-collection.png'
+import applicationPageSingleImage from './exir-bio-applicationpage-single.png'
+import contactPageImage from './exir-bio-contactpage.png'
+
+export const article = {
+  author: 'Charlie Caro',
+  date: '2026-04-02',
+  title: 'Exir Bio Website Redesign Project',
+  description:
+    "A case study on the redesign of Exir Bio's website, focusing on improving user experience, visual design, and content organization to better communicate the company's mission and offerings.",
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+A modular website and design system created to communicate complex scientific capabilities with clarity, credibility, and scalability.
+
+<a href={coverImage.src} target="_blank" rel="noopener noreferrer">
+  <Image src={coverImage} alt="" />
+</a>
+
+## Pages Delivered
+
+<a
+  href={`/viewer?src=${encodeURIComponent(homePageImage.src)}`}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  - View Home Page Design
+</a>
+
+<a
+  href={`/viewer?src=${encodeURIComponent(aboutPageImage.src)}`}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  - View About Page Design
+</a>
+
+<a
+  href={`/viewer?src=${encodeURIComponent(productPageCollectionImage.src)}`}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  - View Product Collection Page Design
+</a>
+
+<a
+  href={`/viewer?src=${encodeURIComponent(productPageSingleImage.src)}`}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  - View Product Single Page Design
+</a>
+
+<a
+  href={`/viewer?src=${encodeURIComponent(applicationPageCollectionImage.src)}`}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  - View Application Collection Page Design
+</a>
+
+<a
+  href={`/viewer?src=${encodeURIComponent(applicationPageSingleImage.src)}`}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  - View Application Single Page Design
+</a>
+
+<a
+  href={`/viewer?src=${encodeURIComponent(contactPageImage.src)}`}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  - View Contact Us Page Design
+</a>
+
+## Overview
+
+### What this project is
+
+Exir Bio is a biotechnology company focused on improving drug safety assessment through advanced in vitro models.
+The goal of this project was to design a modern digital platform that clearly communicates scientific capabilities, builds trust with researchers and partners, and supports long-term product and content growth.
+
+The result is a scalable website system built with reusable components, consistent visual language, and structured content patterns tailored to technical audiences.
+
+## My Role
+
+### Lead Designer
+
+I was responsible for
+
+- Product and website design
+- Visual identity and UI system
+- Component architecture
+- Layout and interaction patterns
+- Responsive design structure
+- Design system foundations
+- Developer-ready design implementation
