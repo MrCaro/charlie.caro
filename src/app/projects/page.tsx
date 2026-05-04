@@ -53,7 +53,7 @@ const projects = [
     name: 'Canovation AR',
     description:
       'I was the Lead Developer for an interactive AR experience for Canovation that brings their innovative can design to life.',
-    link: { href: '/articles/canovation-ar-app', label: 'github.com' },
+    link: { href: '/articles/canovation-ar-app', label: 'ar.canovation.com' },
     logo: logoCanovation,
   },
   {
