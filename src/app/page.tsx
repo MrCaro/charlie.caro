@@ -284,7 +284,7 @@ export default async function Home() {
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
             <span className="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-2 before:bg-emerald-500 dark:before:bg-emerald-400">
               <span className="relative text-white dark:text-gray-950">
-                Front-End Software Engineer
+                Software Engineer / UI Developer
               </span>
             </span>
             <span className="relative z-1">
