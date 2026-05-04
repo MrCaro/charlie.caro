@@ -1,0 +1,45 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+
+import coverImage from './canovation-banner.gif'
+
+export const article = {
+  author: 'Charlie Caro',
+  date: '2024-11-24',
+  title: 'Canovation AR App',
+  description:
+    'An interactive AR experience for Canovation that brings their innovative can design to life. Users can explore a detailed 3D model, discover key features, and engage with the product in an immersive, hands-on way — all from their device.',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+An AR experience for Canovation that brings their innovative can design to life. Users can explore a detailed 3D model, discover key features, and engage with the product in an immersive experience.
+
+**Delivery**: March 2025
+
+<Image src={coverImage} alt="" className="mx-auto" />
+
+## Overview
+
+Canovation is a beverage company that has developed a unique can design with enhanced features for better user experience and sustainability. The goal of this project was to create an interactive AR experience that allows users to explore the can's design and features in a fun and engaging way. The AR app was designed to be accessible on mobile devices, providing an immersive experience that highlights the can's innovative aspects and encourages user interaction.
+
+They were looking for the ability to scan a QR code on the can or visit a website to launch the AR experience, where they could view a 3D model of the can, interact with it to learn about its features, and share the experience on social media, also a way to share their can design story and sustainability efforts in an engaging format with potential investors.
+
+## Features
+
+- **3D Model Exploration**: Users can view a detailed 3D model of the Canovation can, allowing them to rotate, zoom, and interact with the design.
+- **Feature Highlights**: Interactive hotspots on the model provide information about key features such as the can's unique opening mechanism, sustainability benefits, and design innovations.
+- **Engaging Animations**: Animations demonstrate how the can works and its advantages over traditional designs, making the experience both informative
+- **Anchor Based AR**: The app uses anchor-based AR technology to ensure the 3D model is accurately placed and tracked in the real world, providing a stable and immersive experience.
+
+## Challenges and Solutions
+
+- **Technical Constraints**: Ensuring the AR experience runs smoothly on a wide range of mobile devices was a key challenge. We optimized 3D assets and implemented efficient coding practices to maintain performance without sacrificing visual quality.
+- **User Engagement**: To keep users engaged, we incorporated interactive elements and gamification features, such as quizzes and social sharing options, to encourage exploration and sharing of the experience.
+- **3D Model Animations**: Creating realistic animations that effectively demonstrate the can's features required translating that unique can opening experience in Blender. Main challenge here was to export the 3D model with an animation from Blender to make sure I could later trigger the animation from the AR app invoking the timeline forward and backwards to show the opening and closing of the can.
+- **QR Code Integration**: We implemented a seamless QR code scanning experience that allows users to easily access the AR content without needing to download a separate app, ensuring accessibility and ease of use. But we had challenges implementing different QR code designs, I recommended and optimized the QR code design to ensures the app has a great anchor point for the 3D model to be placed and tracked in the real world, providing a stable and immersive AR experience.
+- **Lighting and Visual Quality**: Achieving high visual quality while maintaining performance on mobile devices was a challenge. We used optimized textures, efficient lighting techniques, and level of detail (LOD) models to ensure the AR experience looked great without compromising performance. We wanted to have as much visual fidelity as possible to make the can look realistic and appealing, while also ensuring that the app runs smoothly on a variety of devices.

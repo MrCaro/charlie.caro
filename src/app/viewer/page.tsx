@@ -16,7 +16,7 @@ function ViewerContent() {
   }
 
   return (
-    <main className="min-h-screen bg-neutral-950">
+    <main className="min-h-screen w-full bg-neutral-950">
       <img src={src} alt="Design preview" className="block h-auto w-full" />
     </main>
   )
