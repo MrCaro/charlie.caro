@@ -284,12 +284,18 @@ export default async function Home() {
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
             <span className="relative inline-block before:absolute before:-inset-1 before:block before:-skew-y-2 before:bg-emerald-500 dark:before:bg-emerald-400">
               <span className="relative text-white dark:text-gray-950">
-                Software Engineer / UI Developer
+                Software Engineer &
               </span>
             </span>
-            <span className="relative z-1">
-              , Soccer Player and Theme Park Aficionado.
+            <br />
+            <span className="relative mt-2 inline-block before:absolute before:-inset-1 before:block before:-skew-y-2 before:bg-emerald-500 dark:before:bg-emerald-400">
+              <span className="relative text-white dark:text-gray-950">
+                UI Developer
+              </span>
             </span>
+            {/* <span className="relative z-1">
+              , Soccer Player and Theme Park Aficionado.
+            </span> */}
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             Passionate about crafting clean, fast, and user-friendly web
