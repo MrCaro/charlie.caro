@@ -59,7 +59,7 @@ const projects = [
   {
     name: 'Design System',
     description:
-      'Design System for E-commerce and Marketing Websites built with React and Tailwind CSS.',
+      'Design System for ecommerce and marketing websites built with Storybook.',
     link: {
       href: 'https://component-library-khaki.vercel.app/?path=/docs/primitives-button--docs',
       label: 'miarepa.design',
